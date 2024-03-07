@@ -4,6 +4,7 @@
 let userRoll = 0;
 let machineRoll = 0;
 let rollResult = '';
+const rollWinner = document.getElementById("result")
 
 // Collegare il tasto di avvio dal DOM
 const buttonDiceRoll = document.querySelector('[type="button"]');
@@ -32,6 +33,10 @@ buttonDiceRoll.addEventListener('click', function () {
         console.log(rollResult);
     }
 
-})
+    // Stampare su DOM il risultato
+    rollWinner.innerHTML = `
+    <h4>Umanità: ${userRoll}</h4>
+    <h4>Skynet: ${machineRoll}</h4>
+    <h2>${rollResult}</h2>`
 
-// Stampare su DOM il risultato
+})

@@ -23,7 +23,7 @@ buttonUserEmail.addEventListener('click', function () {
 
         if (emailCheck === userEmail.value) {
             emailResult = true;
-            i = acceptedEmailList.length;
+            email = acceptedEmailList.length;
         }
     }
 
