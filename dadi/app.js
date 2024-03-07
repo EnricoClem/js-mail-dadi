@@ -10,11 +10,15 @@ buttonDiceRoll.addEventListener('click', function () {
 
     // Prendere un numero casuale dall'array per l'utente
     let userRoll = (Math.floor(Math.random() * 6) + 1);
-    console.log(userRoll)
+    console.log('User roll: ', userRoll)
+
+    // Prendere un numero casuale dall'array per il computer
+    let machineRoll = (Math.floor(Math.random() * 6) + 1);
+    console.log('Machine roll: ', machineRoll)
+    
 
 })
 
-// Prendere un numero casuale dall'array per il computer
 // Confrontare i due risultati
 // SE l'utente ha il numero maggiore vince l'utente
 // ALTRIMENTI SE i numeri sono uguali è un pareggio
