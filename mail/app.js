@@ -7,6 +7,8 @@ let acceptedEmailList = ['pippofranco@keficomail.com','rubryrubacuore@katya.it',
 
 // Input per il cliente di inserimento della propria mail
 const userEmail = document.getElementById('useremail');
+let emailResult = false;
+const emailFinalResponse = document.getElementById('esito')
 
 // Click di invio della propria mail
 const buttonUserEmail = document.querySelector('[type="submit"]');
@@ -14,16 +16,28 @@ const buttonUserEmail = document.querySelector('[type="submit"]');
 // Confornto della mail inserita con quelle accettate
 buttonUserEmail.addEventListener('click', function () {
     console.log('avvio confronto');
+    emailResult = false;
 
     for (let email = 0; email < acceptedEmailList.length; email++) {
         const emailCheck = acceptedEmailList[email];
 
         if (emailCheck === userEmail.value) {
-            console.log('Email accettata')
-        } else {
-            console.log('Email non registrata')
+            emailResult = true;
+            email = acceptedEmailList.length;
         }
     }
+
+    // Stampa risultato del confronto su DOM
+    if (emailResult === true) {
+        emailFinalResponse.innerHTML = `
+        <h3>E-mail accettata!</h3>`
+        console.log('Email accettata')
+    } else {
+        emailFinalResponse.innerHTML = `
+        <h3>E-mail non registrata.</h3>`        
+        console.log('Email rifiutata')
+    }
+
 })
 
 // SE la mail è presente nell'elenco fornire esito positivo
