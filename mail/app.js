@@ -18,12 +18,12 @@ buttonUserEmail.addEventListener('click', function () {
     console.log('avvio confronto');
     emailResult = false;
 
-    for (let email = 0; email < acceptedEmailList.length; email++) {
-        const emailCheck = acceptedEmailList[email];
+    for (let i = 0; email < acceptedEmailList.length; i++) {
+        const emailCheck = acceptedEmailList[i];
 
         if (emailCheck === userEmail.value) {
             emailResult = true;
-            email = acceptedEmailList.length;
+            i = acceptedEmailList.length;
         }
     }
 
